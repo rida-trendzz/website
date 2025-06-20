@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rida Trendzz</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap');
+
+    :root {
+      --primary: #967b5c;
+      --accent: #e9e1d8;
+      --light: #fdfdfb;
+      --dark: #333;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+      opacity: 0.03;
+      z-index: -1;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      box-shadow: 0 2px 6px var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom right, #fffaf4, #f7f3ec);
+      padding: 6rem 2rem;
+      animation: fadeInUp 1s ease forwards;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 4000px;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+      text-align: left;
+      margin-left: 1rem;
+    }
+
+    .hero p {
+      color: #555;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-left: 1rem;
+      text-align: left;
+    }
+
+    .cta {
+      margin-top: 2rem;
+      margin-left: 1rem;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.4s;
+    }
+
+    .cta:hover::after {
+      left: 0;
+    }
+
+    .hero img.overlay {
+      position: absolute;
+      right: 2rem;
+      bottom: 0;
+      max-width: 900px; /* Increased size */
+      opacity: 0.95;
+      z-index: 0;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      background-color: var(--accent);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .section:nth-child(even) {
+      background-color: #fff;
+    }
+
+    .section h3 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .feature {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px var(--shadow);
+      padding: 2rem;
+      flex: 1 1 260px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .feature:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 4px 14px var(--shadow);
+    }
+
+    .feature h4 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero img.overlay {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rida Trendzz</h1>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Elegance in Every Fold</h2>
+    <p>Discover modest fashion designed for the modern Muslimah.</p>
+    <button class="cta" onclick="window.location.href='#shop'">Shop Now</button>
+    <img class="overlay" src="New Project (1).png" alt="Hijab mannequin" />
+  </section>
+
+  <section class="section" id="shop">
+    <h3>Featured Collections</h3>
+    <div class="features">
+      <div class="feature">
+        <h4>Hijabs</h4>
+        <p>Stylish, breathable, and comfortable.</p>
+      </div>
+      <div class="feature">
+        <h4>Trendy Pins</h4>
+        <p>Secure your hijab with elegance and charm.</p>
+      </div>
+      <div class="feature">
+        <h4>Burqas (Coming Soon)</h4>
+        <p>Minimal, graceful full coverage with timeless appeal.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h3>About Us</h3>
+    <p style="max-width: 600px; margin: 0 auto; text-align: center;">
+      Rida Trendzz was born out of a vision to blend modesty with modern elegance.
+      From handpicked hijabs to curated accessories, we believe modest fashion should be accessible, stylish, and meaningful—every single day.
+    </p>
+  </section>
+
+  <section class="section" id="contact">
+    <h3>Contact</h3>
+    <p style="text-align:center;">
+      DM us on <a href="https://instagram.com/rida_trendzz" target="_blank">@rida_trendzz</a><br />
+      Email: <a href="mailto:contact@ridatrendzz.com">contact@ridatrendzz.com</a>
+    </p>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Rida Trendzz. All rights reserved.
+  </footer>
+</body>
+</html>
