@@ -152,12 +152,17 @@
       position: absolute;
       right: 2rem;
       bottom: 0;
-      max-width: 900px;
-      width: 57vw;
-      height: auto;
+      max-width: 900px; /* Increased size */
+	height: auto;
+	width: 57vw;
       opacity: 0.95;
       z-index: 0;
     }
+	@media (max-width: 1432px) {
+ 	 .hero img.overlay {
+		display: none;
+  		}
+	}
 
 
     .section {
@@ -229,22 +234,8 @@
         flex-direction: column;
         align-items: center;
       }
-      .hero {
-        align-items: center;
-        text-align: center;
-      }
-      .hero h2, .hero p, .cta {
-        margin-left: 0;
-      }
       .hero img.overlay {
         display: none;
-      }
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .hero img.overlay {
-        width: 40vw;
-        max-width: 400px;
       }
     }
   </style>
